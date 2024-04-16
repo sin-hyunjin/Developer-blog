@@ -1,4 +1,4 @@
-package com.hyunjin.blogback.global.common;
+package com.hyunjin.blogback.common;
 
 public interface ResponseCode {
 

@@ -1,4 +1,4 @@
-package com.hyunjin.blogback.global.auth.jwt.provider;
+package com.hyunjin.blogback.provider;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

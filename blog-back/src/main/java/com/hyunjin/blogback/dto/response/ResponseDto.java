@@ -1,7 +1,7 @@
-package com.hyunjin.blogback.global.dto.response;
+package com.hyunjin.blogback.dto.response;
 
-import com.hyunjin.blogback.global.common.ResponseCode;
-import com.hyunjin.blogback.global.common.ResponseMessage;
+import com.hyunjin.blogback.common.ResponseCode;
+import com.hyunjin.blogback.common.ResponseMessage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
