@@ -1,6 +1,6 @@
-package com.hyunjin.blogback.filter;
+package com.hyunjin.blogback.global.auth.jwt.filter;
 
-import com.hyunjin.blogback.provider.JwtProvider;
+import com.hyunjin.blogback.global.auth.jwt.provider.JwtProvider;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.hyunjin.blogback.config;
+package com.hyunjin.blogback.global.exception;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

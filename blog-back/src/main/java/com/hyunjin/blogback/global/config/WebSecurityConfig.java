@@ -1,6 +1,7 @@
-package com.hyunjin.blogback.config;
+package com.hyunjin.blogback.global.config;
 
-import com.hyunjin.blogback.filter.JwtAuthenticationFilter;
+import com.hyunjin.blogback.global.exception.FailedAuthenticationEntryPoint;
+import com.hyunjin.blogback.global.auth.jwt.filter.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.context.annotation.Bean;
