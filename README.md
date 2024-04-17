@@ -1,6 +1,6 @@
 ### Development 
 - Spring boot v3.2.4
-- Reactjs(ts) 
+- Reactjs(ts) + create-vite@5.2.3
 - MySQL
 
 ### Tool
