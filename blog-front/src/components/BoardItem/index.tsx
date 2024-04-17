@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import type { BoardListItem } from "types/interface";
 import { useNavigate } from "react-router-dom";
-import DefaultProfileImage from "assets/image/hamster.png";
+import DefaultProfileImage from "assets/image/default-image.png";
 interface Props {
   boardListItem: BoardListItem;
 }
@@ -49,7 +49,7 @@ export default function BoardItem({ boardListItem }: Props) {
         {/* bottom */}
         <div className="board-list-item-bottom">
           <div className="board-list-item-counts">
-            {`댓글 : ${commentCount} . 좋아요 : ${favoriteCount} . 조회수 : ${viewCount} `}
+            {`댓글 : ${commentCount} • 좋아요 : ${favoriteCount} • 조회수 : ${viewCount} `}
           </div>
         </div>
       </div>
