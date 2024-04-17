@@ -1,38 +1,33 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+<!-- 버그 템플릿 -->
 
----
+## 버그 보고서
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### 버그 설명
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+<!-- 발견한 버그에 대한 간결한 설명을 여기에 작성해주세요. -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### 재현 단계
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+<!-- 버그를 재현하기 위한 단계를 순서대로 작성해주세요. -->
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+1.
+2.
+3. ...
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+### 예상 동작
 
-**Additional context**
-Add any other context about the problem here.
+<!-- 버그가 없었을 때 예상되는 동작을 여기에 작성해주세요. -->
+
+### 스크린샷/동영상 (선택 사항)
+
+<!-- 버그를 설명하기 위한 스크린샷이나 동영상이 있다면 여기에 첨부해주세요. -->
+
+### 환경
+
+- OS: [예: Windows 10]
+- 브라우저: [예: Chrome 버전 100]
+- 기타 환경 정보: [예: 모바일/데스크톱, 화면 해상도 등]
+
+### 추가 정보
+
+<!-- 추가로 제공할 정보가 있다면 여기에 작성해주세요. -->
