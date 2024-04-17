@@ -1,7 +1,7 @@
 
 # API Interface
-interface.yml
 
+*.yml
 # Logs
 .DS_Store
 
