@@ -1,6 +1,5 @@
-import React from "react";
+import { top3boardListMock } from "mocks";
 import "./App.css";
-import { latestBoardListMock, top3boardListMock } from "mocks";
 import Top3Item from "components/Top3Item";
 
 function App() {
