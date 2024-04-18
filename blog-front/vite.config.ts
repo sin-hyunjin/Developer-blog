@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import svgrPlugin from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { resolve } from "path";
+import * as path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +14,9 @@ export default defineConfig({
     global: "{}", // 글로벌 객체를 빈 객체로 대체
   },
   resolve: {
-    alias: [
-      { find: "@", replacement: resolve(__dirname, "src") },
-      { find: "@pages", replacement: resolve(__dirname, "src/pages") },
-    ],
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
   },
   build: {
     outDir: "build", // build 폴더명 변경

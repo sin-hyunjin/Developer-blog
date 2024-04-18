@@ -10,7 +10,7 @@ interface Props {
 }
 
 /** Component : Top 3 List Item 컴포넌트 */
-export default function Top3Item({ top3ListItem }: Props) {
+const Top3Item = ({ top3ListItem }: Props) => {
   /** Properties */
   const { boardNumber, title, content, boardTitleImage } = top3ListItem;
   const { favoriteCount, commentCount, viewCount } = top3ListItem;
@@ -65,4 +65,6 @@ export default function Top3Item({ top3ListItem }: Props) {
       </div>
     </div>
   );
-}
+};
+
+export default Top3Item;

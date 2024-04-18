@@ -6,7 +6,7 @@ interface Props {
   boardListItem: BoardListItem;
 }
 /**  component : Board List Item 컴포넌트 정의  */
-export default function BoardItem({ boardListItem }: Props) {
+const BoardItem = ({ boardListItem }: Props) => {
   /**  properties */
   const { boardNumber, title, content, boardTitleImage } = boardListItem;
   const { favoriteCount, commentCount, viewCount } = boardListItem;
@@ -65,4 +65,6 @@ export default function BoardItem({ boardListItem }: Props) {
       )}
     </div>
   );
-}
+};
+
+export default BoardItem;
