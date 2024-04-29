@@ -10,8 +10,10 @@ import FavoriteItem from "components/FavoriteItem";
 import Top3Item from "components/Top3Item";
 import BoardItem from "components/BoardItem";
 import InputBox from "components/InputBox";
+import { useState } from "react";
 
 function App() {
+  const [value, setValue] = useState<string>("");
   return (
     <>
       {/* 작성 게시물 목록 컴포넌트 테스트 */}
@@ -44,7 +46,15 @@ function App() {
         ))}
       </div>
       {/* 입력창 컴포넌트 테스트 */}
-      <InputBox />
+      <InputBox
+        label="이메일"
+        type="text"
+        placeholder="이메일 주소를 입력해주세요"
+        value={value}
+        setValue={setValue}
+        error={true}
+        message="aaaa"
+      />
     </>
   );
 }
