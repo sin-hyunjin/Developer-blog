@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import CommentItem from "components/CommentItem";
 import "./App.css";
-import {
-  commentListMock,
-  favoriteListMock,
-  latestBoardListMock,
-  top3boardListMock,
-} from "mocks";
+import CommentItem from "components/CommentItem";
 import FavoriteItem from "components/FavoriteItem";
 import Top3Item from "components/Top3Item";
 import BoardItem from "components/BoardItem";
@@ -31,7 +25,12 @@ import {
   BOARD_DETAIL_PATH,
   BOARD_UPDATE_PATH,
 } from "constant";
-
+import {
+  commentListMock,
+  favoriteListMock,
+  latestBoardListMock,
+  top3boardListMock,
+} from "mocks";
 //            component: Application 컴포넌트             //
 function App() {
   const [value, setValue] = useState<string>("");
@@ -51,6 +50,7 @@ function App() {
         <Route element={<Container />}>
           <Route path={MAIN_PATH()} element={<Main />} />
           <Route path={AUTH_PATH()} element={<Authentication />} />
+          {/*  콜론(:)은 해당 부분이 동적으로 변하는 값을 나타내는 것을 의미 */}
           <Route path={SEARCH_PATH(":searchWord")} element={<Search />} />
           <Route path={USER_PATH(":userEmail")} element={<User />} />
           <Route path={BOARD_PATH()}>
