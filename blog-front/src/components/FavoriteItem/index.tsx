@@ -2,13 +2,13 @@ import { FavoriteListItem } from "types/interface";
 import "./style.css";
 import defaultProfileImage from "assets/image/default-profile-image.png";
 
-/** Interface  */
+/** interface  */
 interface Props {
   favoriteListItem: FavoriteListItem;
 }
-/** Component : favoriteListItem 컴포넌트 */
+/** component : favoriteListItem 컴포넌트 */
 const FavoriteItem = ({ favoriteListItem }: Props) => {
-  /** Properties */
+  /** properties */
   const { nickname, profileImage } = favoriteListItem;
 
   /** render : favoriteListItem  */

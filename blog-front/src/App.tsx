@@ -6,7 +6,6 @@ import FavoriteItem from "components/FavoriteItem";
 import Top3Item from "components/Top3Item";
 import BoardItem from "components/BoardItem";
 import InputBox from "components/InputBox";
-import Footer from "layouts/Footer";
 import Main from "views/Main";
 import Authentication from "views/Authentication";
 import Search from "views/Search";
@@ -107,8 +106,6 @@ function App() {
         error={true}
         message="aaaa"
       />
-      {/* 하단 배너 테스트 */}
-      <Footer></Footer>
     </>
   );
 }

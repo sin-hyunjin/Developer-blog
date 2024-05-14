@@ -5,7 +5,7 @@ import DefaultProfileImage from "assets/image/default-profile-image.png";
 interface Props {
   boardListItem: BoardListItem;
 }
-/**  component : Board List Item 컴포넌트 정의  */
+/*  component : Board List Item 컴포넌트 정의  */
 const BoardItem = ({ boardListItem }: Props) => {
   /**  properties */
   const { boardNumber, title, content, boardTitleImage } = boardListItem;
