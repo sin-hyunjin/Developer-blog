@@ -1,18 +1,46 @@
 import "./style.css";
-import { useNavigate, useParams } from "react-router-dom";
-import { AUTH_PATH, MAIN_PATH, USER_PATH } from "constant";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  AUTH_PATH,
+  BOARD_DETAIL_PATH,
+  BOARD_PATH,
+  BOARD_UPDATE_PATH,
+  BOARD_WRITE_PATH,
+  MAIN_PATH,
+  SEARCH_PATH,
+  USER_PATH,
+} from "constant";
 import { useCookies } from "react-cookie";
 import { useState } from "react";
 import SearchButton from "./components/SearchButton";
-import { useLoginUserStore } from "stores";
+import { useBoardStore, useLoginUserStore } from "stores";
 //            component : 헤더 레이아웃           //
 const Header = () => {
   //            state : 로그인 유저 상태            //
   const { loginUser, setLoginUser, resetLoginUser } = useLoginUserStore();
+  //            state :  path 상태            //
+  const { pathname } = useLocation();
   //            state : cookie 상태           //
   const [cookie, setCookie] = useCookies();
   //            state : 로그인 상태           //
   const [isLogin, setLogin] = useState<boolean>(false);
+
+  console.log(pathname);
+  const isAuthPage = pathname.startsWith(AUTH_PATH());
+  const isMainPage = pathname === MAIN_PATH();
+  const isSearchPage = pathname.startsWith(SEARCH_PATH(""));
+  const isBoardDetailPage = pathname.startsWith(
+    BOARD_PATH() + "/" + BOARD_DETAIL_PATH("")
+  );
+  const isBoardWritePage = pathname.startsWith(
+    BOARD_PATH() + "/" + BOARD_WRITE_PATH()
+  );
+  console.log(isBoardWritePage);
+
+  const isBoardUpdatePage = pathname.startsWith(
+    BOARD_PATH() + "/" + BOARD_UPDATE_PATH("")
+  );
+  const isUserPage = pathname.startsWith(USER_PATH(""));
 
   //            function : 네비게이트 함수            //
   const navigate = useNavigate();
@@ -64,6 +92,29 @@ const Header = () => {
       >{`로그인`}</div>
     );
   };
+  //            component : 업로드 버튼 컴포넌트            //
+  const UploadButton = () => {
+    //              state : 게시물 상태             //
+    const { title, content, boardImageFileList, resetBoard } = useBoardStore();
+
+    //            event handler : 업로드 버튼 클릭 이벤트 처리 함수             //
+    const onUploadButtonClickHandler = () => {};
+    //            render : 업로드 버튼 렌더링         //
+    if (title && content)
+      return (
+        <div
+          className="black-button"
+          onClick={onUploadButtonClickHandler}
+        >{`업로드`}</div>
+      );
+    //            render : 업로드 불가 버튼 렌더링         //
+    return (
+      <div
+        className="disable-button"
+        onClick={onUploadButtonClickHandler}
+      >{`업로드`}</div>
+    );
+  };
 
   //            render : 헤더 레이아웃 렌더링         //
   return (
@@ -76,8 +127,13 @@ const Header = () => {
           <div className="header-logo">{`현진 개발블로그`}</div>
         </div>
         <div className="header-right-box">
-          <SearchButton navigate={navigate} />
-          <MyPagesButton />
+          {(isAuthPage || isMainPage || isSearchPage || isBoardDetailPage) && (
+            <SearchButton navigate={navigate} />
+          )}
+          {(isMainPage || isSearchPage || isBoardDetailPage || isUserPage) && (
+            <MyPagesButton />
+          )}
+          {(isBoardWritePage || isBoardUpdatePage) && <UploadButton />}
         </div>
       </div>
     </div>

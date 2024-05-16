@@ -1,14 +1,13 @@
-
 import { NavigateFunction, useParams } from "react-router-dom";
 import { SEARCH_PATH } from "constant";
 import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 
 //              interface : SearchButton            //
 interface Props {
-  navigate : NavigateFunction
+  navigate: NavigateFunction;
 }
- //            component : 검색 버튼 컴포넌트            //
- const SearchButton = ({navigate}: Props) => {
+//            component : 검색 버튼 컴포넌트            //
+const SearchButton = ({ navigate }: Props) => {
   //            state : 검색 버튼 요소 참조 상태            //
   const searchButtonRef = useRef<HTMLDivElement | null>(null);
   //            state : 검색 버튼 상태            //
@@ -18,9 +17,7 @@ interface Props {
   //            state : 검색어 path variable 상태           //
   const { searchWord } = useParams();
   //            event handler : 검색어 변경 이벤트 처리 함수             //
-  const onSearchWordChangeHandler = (
-    event: ChangeEvent<HTMLInputElement>
-  ) => {
+  const onSearchWordChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setWord(value);
   };
@@ -60,12 +57,19 @@ interface Props {
     //            render : 검색 버튼 컴포넌트 렌더링 (클릭 ture 상태)           //
     return (
       <div className="header-search-input-box">
-        <input className="header-search-input" type="text" placeholder="검색어를 입력해주세요."
+        <input
+          className="header-search-input"
+          type="text"
+          placeholder="검색어를 입력해주세요."
           value={word}
           onChange={onSearchWordChangeHandler}
           onKeyDown={onSearchWordKeyDownHandler}
         />
-        <div ref={searchButtonRef} className="icon-button" onClick={onSearchButtonClickHandler} >
+        <div
+          ref={searchButtonRef}
+          className="icon-button"
+          onClick={onSearchButtonClickHandler}
+        >
           <div className="icon search-light-icon"></div>
         </div>
       </div>
@@ -73,4 +77,4 @@ interface Props {
   }
 };
 
-export default SearchButton
+export default SearchButton;

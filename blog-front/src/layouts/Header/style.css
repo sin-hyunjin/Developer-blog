@@ -8,6 +8,7 @@
 .header-container {
   width: 1200px;
 
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,4 +60,30 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
+}
+
+/* 화면이 작아졌을 때 요소들이 함께 줄어들도록 수정 */
+@media screen and (max-width: 1200px) {
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .header-left-box {
+    width: 50%; /* 화면 절반만큼 차지 */
+    text-align: left;
+  }
+
+  .header-right-box {
+    width: 50%; /* 화면 절반만큼 차지 */
+    text-align: right;
+  }
+}
+
+/* 화면이 아주 작아졌을 때 한 줄에 하나씩 요소가 배치되도록 수정 */
+@media screen and (max-width: 768px) {
+  .header-left-box,
+  .header-right-box {
+    width: 100%; /* 전체 너비로 설정 */
+    text-align: center;
+  }
 }
